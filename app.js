@@ -1,8 +1,8 @@
+// LAST POKEMON
+let lastPokemon = 11;
 // QUERY SELECTOR
 const display = document.querySelector(".display");
 // FETCH
-let lastPokemon = 11;
-
 const getPokemon = async () => {
   pokemonData = [];
   for (let index = 1; index < lastPokemon && index <= 151; index++) {
@@ -39,7 +39,7 @@ const displayPokemons = (pokemons) => {
 };
 
 getPokemon();
-
+// SCROLL LISTENER
 window.addEventListener("scroll", () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
