@@ -1,15 +1,11 @@
-// window.addEventListener("scroll", () => {
-//   const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
-//   if (scrollTop + clientHeight > scrollHeight - 500) {
-//     nextPage();
-//   }
-// });
 // QUERY SELECTOR
 const display = document.querySelector(".display");
 // FETCH
+let lastPokemon = 11;
+
 const getPokemon = async () => {
   pokemonData = [];
-  for (let index = 1; index < 151; index++) {
+  for (let index = 1; index < lastPokemon && index <= 151; index++) {
     data = await fetch(`https://pokeapi.co/api/v2/pokemon/${index}`);
     dataJson = await data.json();
 
@@ -43,3 +39,12 @@ const displayPokemons = (pokemons) => {
 };
 
 getPokemon();
+
+window.addEventListener("scroll", () => {
+  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
+  if (scrollTop + clientHeight + 0.5 >= scrollHeight) {
+    lastPokemon += 10;
+    getPokemon();
+  }
+});

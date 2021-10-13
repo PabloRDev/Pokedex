@@ -14,7 +14,7 @@ body {
   min-width: 833px;
   background: linear-gradient(90deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
-  animation: gradient 3s ease infinite;
+  animation: gradient 5s ease infinite;
   height: 100%;
 }
 
@@ -77,9 +77,9 @@ img {
 }
 
 .gif {
-width: 5%;
-display: flex;
-margin: 20px auto;
+  width: 5%;
+  display: flex;
+  margin: 20px auto;
 }
 
 img:hover {
